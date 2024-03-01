@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .frame {
+            border: 2px solid #000;
+            padding: 10px;
+  margin: 10px;
+            width: 200px;         
+        }
+    </style>
+</head>
+<body>
+    <h1>รายวิชาในหลักสูตร</h1>
+    <div>
+        {% for a in course %}
+    <div class="frame">
+        <div>
+            {{a.id}}  {{a.name}}
+        </div>
+
+        <div>
+            <a href="/edit/{{a.id}}/" >edit</a>
+            <a href="/delete/{{a.id}}/" >delete</a>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
